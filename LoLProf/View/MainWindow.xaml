@@ -11,7 +11,7 @@
             <Image Source="/Assets/logo2.png" Width="96" Height="96"/>
             <Border Background="WhiteSmoke" Margin="10 20" CornerRadius="5">
                 <StackPanel Margin="25">
-                    <ComboBox Text="{Binding Region}" Margin="15" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Region">
+                    <ComboBox Text="{Binding Region}" Margin="15" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Region" >
                         <ComboBoxItem Content="RU" />
                         <ComboBoxItem Content="KR" />
                         <ComboBoxItem Content="BR1" />

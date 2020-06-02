@@ -5,45 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoLProf.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="400" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+        mc:Ignorable="d" Height="400" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
     <Grid>
-        <Border Background="White" Margin="20 100 20 20" CornerRadius="15">
+        <Border Background="WhiteSmoke" Margin="20 100 20 20" CornerRadius="15">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
-                <Border Width="100" Height="100" Margin="20 10 0 10" BorderBrush="Gray" HorizontalAlignment="Left" BorderThickness="1" CornerRadius="15">
-                    <Border.Background>
-                        <ImageBrush ImageSource="{Binding Path=Icon}"/>
-                    </Border.Background>
-                </Border>
-                <TextBlock Margin="15 20" FontSize="30" Text="{Binding Path=SummonerName}" Foreground="DarkGray"/>
-                <StackPanel Orientation="Horizontal" Margin="10 0">
-                    <StackPanel Margin="5">
-                        <TextBlock Text="Wins" FontSize="15" FontWeight="Bold" Foreground="Green"/>
-                        <TextBlock Text="{Binding Path=Wins}" FontSize="18" Foreground="Black" HorizontalAlignment="Center"/>
+                    <Border Width="100" Height="100" Margin="20 10 0 10" BorderBrush="Gray" HorizontalAlignment="Left" BorderThickness="1" CornerRadius="15">
+                        <Border.Background>
+                            <ImageBrush ImageSource="{Binding Path=Icon}"/>
+                        </Border.Background>
+                    </Border>
+                    <TextBlock Margin="15,0" FontSize="30" Text="{Binding SummonerName}" Foreground="DarkGray"/>
+                    <StackPanel Orientation="Horizontal" Margin="10 0">
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Wins" FontSize="15" FontWeight="Bold" Foreground="Green"/>
+                            <TextBlock Text="{Binding Path=Wins}" FontSize="18" Foreground="Black" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Losses" FontSize="15" FontWeight="Bold" Foreground="Red"/>
+                            <TextBlock Text="{Binding Path=Losses}" FontSize="18" Foreground="Black" HorizontalAlignment="Center"/>
+                        </StackPanel>
                     </StackPanel>
-                    <StackPanel Margin="5">
-                        <TextBlock Text="Losses" FontSize="15" FontWeight="Bold" Foreground="Red"/>
-                        <TextBlock Text="{Binding Path=Losses}" FontSize="18" Foreground="Black" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="15">
                     <TextBlock Text="WinRate " FontSize="15" Foreground="DarkSlateGray"/>
                     <TextBlock Text="{Binding Path=WinRate}" Foreground="DarkSlateGray" FontSize="15"/>
                     <TextBlock Text=" %" Foreground="DarkSlateGray" FontSize="15"/>
-                    <TextBlock Text="C. WinRate " FontSize="15" Foreground="DarkSlateGray" Width="195" TextAlignment="Right"/>
-                    <TextBlock Text="15" FontSize="15" Foreground="DarkSlateGray" Width="15" TextAlignment="Right"/>
-                    <TextBlock Text=" %" FontSize="15" Foreground="DarkSlateGray" Width="17" TextAlignment="Right"/>
+                    <TextBlock Text="Aatrox WinRate " FontSize="15" Foreground="DarkSlateGray" Width="180" TextAlignment="Right"/>
+                    <TextBlock Text="60" FontSize="15" Foreground="DarkSlateGray" Width="17" TextAlignment="Right"/>
+                    <TextBlock Text="%" FontSize="15" Foreground="DarkSlateGray" Width="17" TextAlignment="Right"/>
                 </StackPanel>
-                <StackPanel HorizontalAlignment="Right">
-                    <Border Width="150" Height="150" BorderBrush="Gray" HorizontalAlignment="Center" BorderThickness="1" CornerRadius="15">
-                        <Image Source="/LoLProf;component/Assets/Champions/Aatrox.png" Width="150" Height="150"/>
-                    </Border>
+                <StackPanel HorizontalAlignment="Right" Margin="10 -90">
+                    <StackPanel.Effect>
+                        <DropShadowEffect BlurRadius="40" ShadowDepth="1"/>
+                    </StackPanel.Effect>
+                    <Image Source="/LoLProf;component/Assets/Champions/Aatrox.png" Width="100" Height="100"/>
                 </StackPanel>
-
-                <Grid Margin="20 10">
-                    <Button HorizontalAlignment="Left" Style="{Binding MaterialDeisgnFlatButton}" Width="40" Margin="10,0,0,0">
-                        <materialDesign:PackIcon Kind="Close" Width="24" Height="24"/>
-                    </Button>
-                </Grid>
             </StackPanel>
         </Border>
         <StackPanel HorizontalAlignment="Right" Margin="30 10">
