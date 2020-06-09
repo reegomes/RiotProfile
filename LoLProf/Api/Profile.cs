@@ -23,7 +23,6 @@ namespace LoLzada.Profile
             Losses = losses;
             Champion = champion ?? throw new ArgumentNullException(nameof(champion));
             ChampRating = champRating;
-            
         }
 
         public float WinRate(int win, int lose)

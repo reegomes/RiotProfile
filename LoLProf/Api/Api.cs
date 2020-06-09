@@ -10,7 +10,7 @@ namespace LoLProf.Api
 {
     public class Api
     {
-        private string Key { get; set; }
+        public string Key { get; set; }
         private string Region { get; set; }
 
         public Api(string region)

@@ -12,5 +12,6 @@ namespace LoLProf.Model
         public string Name { get; set; }
         public long SummonerLevel { get; set; }
         public string Id { get; set; }
+        public string accountId { get; set; }
     }
 }

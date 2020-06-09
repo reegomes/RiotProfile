@@ -16,10 +16,14 @@ namespace LoLProf.Controller
         {
             var summoner = Constants.Summoner;
             var position = GetPosition(summoner);
+            //var mhistory = GetMatch(summoner);
+            //var currentlyMatch = GetChampion(summoner);
 
-            return new ViewModelProfile(summoner.Name, summoner.ProfileIconId, summoner.SummonerLevel, position.Tier, position.Rank, position.Wins, position.Losses);
+            //return new ViewModelProfile(summoner.Name, summoner.ProfileIconId, summoner.SummonerLevel, position.Tier, position.Rank, position.Wins, position.Losses, summoner.accountId);
+            return new ViewModelProfile(summoner.Name, summoner.ProfileIconId, summoner.SummonerLevel, position.Tier, position.Rank, position.Wins, position.Losses, summoner.accountId);
         }
 
+        // Pego as informações do ranking e fila
         private PositionDTO GetPosition(SummonerDTO summoner)
         {
             League_V4 league = new League_V4(Constants.Region);
@@ -28,7 +32,20 @@ namespace LoLProf.Controller
 
             return position ?? new PositionDTO();
         }
-
+        // Pego os historicos de partida
+        private MatchDTO GetMatch(SummonerDTO summoner)
+        {
+            Match_V4 matchs = new Match_V4(Constants.Region);
+            var mhistory = matchs.GetMatchHistoryByAccount(summoner.accountId);
+            return mhistory ?? new MatchDTO();
+        }
+        // Precisa do spectator funcionando
+        private SpectatorDTO GetChampion(SummonerDTO summoner)
+        {
+            Spectator_V4 spectator = new Spectator_V4(Constants.Region);
+            var spectatorVar = spectator.GetSpectator(summoner.Id);
+            return spectatorVar ?? new SpectatorDTO();
+        } 
         public void OpenMain()
         {
             MainWindow profile = new MainWindow();

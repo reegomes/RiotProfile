@@ -9,5 +9,7 @@ namespace LoLProf.Model
     public class SpectatorDTO
     {
         public string SummonerId { get; set; }
+        public int championId { get; set; }
+        public Dictionary<int, int> Participants { get; set; }
     }
 }
