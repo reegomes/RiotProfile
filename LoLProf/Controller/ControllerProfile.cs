@@ -17,10 +17,10 @@ namespace LoLProf.Controller
             var summoner = Constants.Summoner;
             var position = GetPosition(summoner);
             //var mhistory = GetMatch(summoner);
-            //var currentlyMatch = GetChampion(summoner);
+            var currentlyMatch = GetChampion(summoner);
 
-            //return new ViewModelProfile(summoner.Name, summoner.ProfileIconId, summoner.SummonerLevel, position.Tier, position.Rank, position.Wins, position.Losses, summoner.accountId);
             return new ViewModelProfile(summoner.Name, summoner.ProfileIconId, summoner.SummonerLevel, position.Tier, position.Rank, position.Wins, position.Losses, summoner.accountId);
+            //eturn new ViewModelProfile(summoner.Name, summoner.ProfileIconId, summoner.SummonerLevel, position.Tier, position.Rank, position.Wins, position.Losses, summoner.accountId);
         }
 
         // Pego as informações do ranking e fila
@@ -43,7 +43,16 @@ namespace LoLProf.Controller
         private SpectatorDTO GetChampion(SummonerDTO summoner)
         {
             Spectator_V4 spectator = new Spectator_V4(Constants.Region);
+            //var spectatorVar = spectator.GetSpectator(summoner.Id).Where(p => p.MyParticipants.Equals(summoner.Id)).FirstOrDefault();
             var spectatorVar = spectator.GetSpectator(summoner.Id);
+
+            for (int i = 0; i < spectatorVar.Participants.Count; i++)
+            {
+                if (summoner.Id == spectatorVar.Participants[i].SummonerId)
+                {
+                    Constants.CurrentyChampionId = spectatorVar.Participants[i].ChampionId;
+                }
+            }
             return spectatorVar ?? new SpectatorDTO();
         } 
         public void OpenMain()

@@ -25,6 +25,17 @@
                         <ComboBoxItem Content="LA2" />
                     </ComboBox>
                     <TextBox Text="{Binding SummonerName}" Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Summoner" />
+                    <StackPanel>
+                        <ComboBox Text="{Binding GameMode}" Margin="15" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Game Mode" >
+                            <ComboBoxItem Content="League of Legends" />
+                            <ComboBoxItem Content="TeamFight Tatics" />
+                            <ComboBoxItem Content="Legends of Runeterra" />
+                            <ComboBoxItem Content="Valorant" />
+                            <ComboBoxItem Content="LoL: Wild Rift" />
+                            <ComboBoxItem Content="Project L" />
+                            <ComboBoxItem Content="Project F" />
+                        </ComboBox>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Margin="15 50" Content="Update"/>
                         <Button x:Name="ButtonSignUp" Margin="15 50" Content="Search" Click="ButtonSignUp_Click" />

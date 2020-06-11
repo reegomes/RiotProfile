@@ -1,0 +1,48 @@
+﻿<Window x:Class="LoLProf.View.WindowTFT"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoLProf.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="340" Width="400" WindowStartupLocation="Manual" ResizeMode="NoResize" WindowStyle="None" Background="Magenta" AllowsTransparency="True">
+    <Grid>
+        <Border Margin="20 100 20 20" CornerRadius="15">
+            <Border.Background>
+                <ImageBrush ImageSource="/LoLProf;component/Assets/Background/jhin.png"/>
+            </Border.Background>
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <Border Width="100" Height="100" Margin="20 10 0 10" BorderBrush="Gray" HorizontalAlignment="Left" BorderThickness="1" CornerRadius="15">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{Binding Path=Icon}"/>
+                    </Border.Background>
+                </Border>
+                <TextBlock Margin="15,0" FontSize="30" Text="{Binding SummonerName}" Foreground="GhostWhite" />
+                <StackPanel Orientation="Horizontal" Margin="10 0">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Wins" FontSize="15" FontWeight="Bold" Foreground="LightSeaGreen"/>
+                        <TextBlock Text="{Binding Path=Wins}" FontSize="18" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Losses" FontSize="15" FontWeight="Bold" Foreground="OrangeRed"/>
+                        <TextBlock Text="{Binding Path=Losses}" FontSize="18" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="WinRate " FontSize="15" FontWeight="Bold" Foreground="SkyBlue"/>
+                        <TextBlock Text="{Binding Path=WinRate}" Foreground="{Binding Path=ColorWinRate}" FontSize="18" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <StackPanel HorizontalAlignment="Right" Margin="10 10">
+            <StackPanel.Effect>
+                <DropShadowEffect BlurRadius="40" ShadowDepth="1"/>
+            </StackPanel.Effect>
+            <Image Source="{Binding Path=Emblem}" Width="150" Height="150" Margin="30"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock FontSize="18" Foreground="GhostWhite" Text="{Binding Path=Tier}" Margin="-20" HorizontalAlignment="Left"/>
+                <TextBlock FontSize="18" Foreground="White" Text="{Binding Path=Rank}" Margin="-20" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

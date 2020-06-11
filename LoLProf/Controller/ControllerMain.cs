@@ -38,8 +38,6 @@ namespace LoLProf.Controller
 
             var spec = spec_V4.GetSpectator(encryptedSummonerId);
 
-            Constants.Spec = spec;
-
             return spec != null;
         }
     }

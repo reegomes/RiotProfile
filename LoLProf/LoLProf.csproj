@@ -105,18 +105,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Api\LeagueTFT1.cs" />
     <Compile Include="Api\League_V4.cs" />
     <Compile Include="Api\Match_V4.cs" />
     <Compile Include="Api\Spectator_V4.cs" />
     <Compile Include="Controller\ControllerProfile.cs" />
+    <Compile Include="Controller\ControllerTFT.cs" />
     <Compile Include="Model\MatchDTO.cs" />
     <Compile Include="Model\PositionDTO.cs" />
     <Compile Include="Model\SpectatorDTO.cs" />
+    <Compile Include="Model\TFTLeagueDTO.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="View\ViewModel\ViewModelMain.cs" />
     <Compile Include="View\ViewModel\ViewModelProfile.cs" />
+    <Compile Include="View\ViewModel\ViewModelTFT.cs" />
     <Compile Include="View\WindowProfile.xaml.cs">
       <DependentUpon>WindowProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WindowTFT.xaml.cs">
+      <DependentUpon>WindowTFT.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +143,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\WindowProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WindowTFT.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,9 +221,6 @@
     <Resource Include="Assets\Levels\Level_75_Summoner_Icon_Border.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Champions\Aatrox.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\Background\jukes.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +237,156 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Background\yetz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Champions\Aatrox.png" />
+    <Resource Include="Assets\Champions\Ahri.png" />
+    <Resource Include="Assets\Champions\Akali.png" />
+    <Resource Include="Assets\Champions\Alistar.png" />
+    <Resource Include="Assets\Champions\Amumu.png" />
+    <Resource Include="Assets\Champions\Anivia.png" />
+    <Resource Include="Assets\Champions\Annie.png" />
+    <Resource Include="Assets\Champions\Aphelios.png" />
+    <Resource Include="Assets\Champions\Ashe.png" />
+    <Resource Include="Assets\Champions\AurelionSol.png" />
+    <Resource Include="Assets\Champions\Azir.png" />
+    <Resource Include="Assets\Champions\Bard.png" />
+    <Resource Include="Assets\Champions\Blitzcrank.png" />
+    <Resource Include="Assets\Champions\Brand.png" />
+    <Resource Include="Assets\Champions\Braum.png" />
+    <Resource Include="Assets\Champions\Caitlyn.png" />
+    <Resource Include="Assets\Champions\Camille.png" />
+    <Resource Include="Assets\Champions\Cassiopeia.png" />
+    <Resource Include="Assets\Champions\Chogath.png" />
+    <Resource Include="Assets\Champions\Corki.png" />
+    <Resource Include="Assets\Champions\Darius.png" />
+    <Resource Include="Assets\Champions\Diana.png" />
+    <Resource Include="Assets\Champions\Draven.png" />
+    <Resource Include="Assets\Champions\DrMundo.png" />
+    <Resource Include="Assets\Champions\Ekko.png" />
+    <Resource Include="Assets\Champions\Elise.png" />
+    <Resource Include="Assets\Champions\Evelynn.png" />
+    <Resource Include="Assets\Champions\Ezreal.png" />
+    <Resource Include="Assets\Champions\Fiddlesticks.png" />
+    <Resource Include="Assets\Champions\Fiora.png" />
+    <Resource Include="Assets\Champions\Fizz.png" />
+    <Resource Include="Assets\Champions\Galio.png" />
+    <Resource Include="Assets\Champions\Gangplank.png" />
+    <Resource Include="Assets\Champions\Garen.png" />
+    <Resource Include="Assets\Champions\Gnar.png" />
+    <Resource Include="Assets\Champions\Gragas.png" />
+    <Resource Include="Assets\Champions\Graves.png" />
+    <Resource Include="Assets\Champions\Hecarim.png" />
+    <Resource Include="Assets\Champions\Heimerdinger.png" />
+    <Resource Include="Assets\Champions\Illaoi.png" />
+    <Resource Include="Assets\Champions\Irelia.png" />
+    <Resource Include="Assets\Champions\Ivern.png" />
+    <Resource Include="Assets\Champions\Janna.png" />
+    <Resource Include="Assets\Champions\JarvanIV.png" />
+    <Resource Include="Assets\Champions\Jax.png" />
+    <Resource Include="Assets\Champions\Jayce.png" />
+    <Resource Include="Assets\Champions\Jhin.png" />
+    <Resource Include="Assets\Champions\Jinx.png" />
+    <Resource Include="Assets\Champions\Kaisa.png" />
+    <Resource Include="Assets\Champions\Kalista.png" />
+    <Resource Include="Assets\Champions\Karma.png" />
+    <Resource Include="Assets\Champions\Karthus.png" />
+    <Resource Include="Assets\Champions\Kassadin.png" />
+    <Resource Include="Assets\Champions\Katarina.png" />
+    <Resource Include="Assets\Champions\Kayle.png" />
+    <Resource Include="Assets\Champions\Kayn.png" />
+    <Resource Include="Assets\Champions\Kennen.png" />
+    <Resource Include="Assets\Champions\Khazix.png" />
+    <Resource Include="Assets\Champions\Kindred.png" />
+    <Resource Include="Assets\Champions\Kled.png" />
+    <Resource Include="Assets\Champions\KogMaw.png" />
+    <Resource Include="Assets\Champions\Leblanc.png" />
+    <Resource Include="Assets\Champions\LeeSin.png" />
+    <Resource Include="Assets\Champions\Leona.png" />
+    <Resource Include="Assets\Champions\Lissandra.png" />
+    <Resource Include="Assets\Champions\Lucian.png" />
+    <Resource Include="Assets\Champions\Lulu.png" />
+    <Resource Include="Assets\Champions\Lux.png" />
+    <Resource Include="Assets\Champions\Malphite.png" />
+    <Resource Include="Assets\Champions\Malzahar.png" />
+    <Resource Include="Assets\Champions\Maokai.png" />
+    <Resource Include="Assets\Champions\MasterYi.png" />
+    <Resource Include="Assets\Champions\MissFortune.png" />
+    <Resource Include="Assets\Champions\MonkeyKing.png" />
+    <Resource Include="Assets\Champions\Mordekaiser.png" />
+    <Resource Include="Assets\Champions\Morgana.png" />
+    <Resource Include="Assets\Champions\Nami.png" />
+    <Resource Include="Assets\Champions\Nasus.png" />
+    <Resource Include="Assets\Champions\Nautilus.png" />
+    <Resource Include="Assets\Champions\Neeko.png" />
+    <Resource Include="Assets\Champions\Nidalee.png" />
+    <Resource Include="Assets\Champions\Nocturne.png" />
+    <Resource Include="Assets\Champions\Nunu.png" />
+    <Resource Include="Assets\Champions\Olaf.png" />
+    <Resource Include="Assets\Champions\Orianna.png" />
+    <Resource Include="Assets\Champions\Ornn.png" />
+    <Resource Include="Assets\Champions\Pantheon.png" />
+    <Resource Include="Assets\Champions\Poppy.png" />
+    <Resource Include="Assets\Champions\Pyke.png" />
+    <Resource Include="Assets\Champions\Qiyana.png" />
+    <Resource Include="Assets\Champions\Quinn.png" />
+    <Resource Include="Assets\Champions\Rakan.png" />
+    <Resource Include="Assets\Champions\Rammus.png" />
+    <Resource Include="Assets\Champions\RekSai.png" />
+    <Resource Include="Assets\Champions\Renekton.png" />
+    <Resource Include="Assets\Champions\Rengar.png" />
+    <Resource Include="Assets\Champions\Riven.png" />
+    <Resource Include="Assets\Champions\Rumble.png" />
+    <Resource Include="Assets\Champions\Ryze.png" />
+    <Resource Include="Assets\Champions\Sejuani.png" />
+    <Resource Include="Assets\Champions\Senna.png" />
+    <Resource Include="Assets\Champions\Sett.png" />
+    <Resource Include="Assets\Champions\Shaco.png" />
+    <Resource Include="Assets\Champions\Shen.png" />
+    <Resource Include="Assets\Champions\Shyvana.png" />
+    <Resource Include="Assets\Champions\Singed.png" />
+    <Resource Include="Assets\Champions\Sion.png" />
+    <Resource Include="Assets\Champions\Sivir.png" />
+    <Resource Include="Assets\Champions\Skarner.png" />
+    <Resource Include="Assets\Champions\Sona.png" />
+    <Resource Include="Assets\Champions\Soraka.png" />
+    <Resource Include="Assets\Champions\Swain.png" />
+    <Resource Include="Assets\Champions\Sylas.png" />
+    <Resource Include="Assets\Champions\Syndra.png" />
+    <Resource Include="Assets\Champions\TahmKench.png" />
+    <Resource Include="Assets\Champions\Taliyah.png" />
+    <Resource Include="Assets\Champions\Talon.png" />
+    <Resource Include="Assets\Champions\Taric.png" />
+    <Resource Include="Assets\Champions\Teemo.png" />
+    <Resource Include="Assets\Champions\Thresh.png" />
+    <Resource Include="Assets\Champions\Tristana.png" />
+    <Resource Include="Assets\Champions\Trundle.png" />
+    <Resource Include="Assets\Champions\Tryndamere.png" />
+    <Resource Include="Assets\Champions\TwistedFate.png" />
+    <Resource Include="Assets\Champions\Twitch.png" />
+    <Resource Include="Assets\Champions\Udyr.png" />
+    <Resource Include="Assets\Champions\Urgot.png" />
+    <Resource Include="Assets\Champions\Varus.png" />
+    <Resource Include="Assets\Champions\Vayne.png" />
+    <Resource Include="Assets\Champions\Veigar.png" />
+    <Resource Include="Assets\Champions\Velkoz.png" />
+    <Resource Include="Assets\Champions\Vi.png" />
+    <Resource Include="Assets\Champions\Viktor.png" />
+    <Resource Include="Assets\Champions\Vladimir.png" />
+    <Resource Include="Assets\Champions\Volibear.png" />
+    <Resource Include="Assets\Champions\Warwick.png" />
+    <Resource Include="Assets\Champions\Xayah.png" />
+    <Resource Include="Assets\Champions\Xerath.png" />
+    <Resource Include="Assets\Champions\XinZhao.png" />
+    <Resource Include="Assets\Champions\Yasuo.png" />
+    <Resource Include="Assets\Champions\Yorick.png" />
+    <Resource Include="Assets\Champions\Yuumi.png" />
+    <Resource Include="Assets\Champions\Zac.png" />
+    <Resource Include="Assets\Champions\Zed.png" />
+    <Resource Include="Assets\Champions\Ziggs.png" />
+    <Resource Include="Assets\Champions\Zilean.png" />
+    <Resource Include="Assets\Champions\Zoe.png" />
+    <Resource Include="Assets\Champions\Zyra.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />

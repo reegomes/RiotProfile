@@ -42,13 +42,45 @@ namespace LoLProf
                 return;
             if (string.IsNullOrEmpty(viewModel.SummonerName))
                 return;
-
+            if (string.IsNullOrEmpty(viewModel.GameMode))
+                return;
 
             if(controller.GetSummoner(viewModel.SummonerName))
             {
                 WindowProfile profile = new WindowProfile();
-                profile.Show();
-                this.Close();
+                WindowTFT windowTFT = new WindowTFT();
+
+                switch (viewModel.GameMode.ToString())
+                {
+                    case "League Of Legends":
+                        profile.Show();
+                        this.Close();
+                        break;
+                    case "TeamFight Tatics":
+                        windowTFT.Show();
+                        this.Close();
+                        break;
+                    case "Legends of Runeterra":
+                        MessageBox.Show("Soon");
+                        break;
+                    case "Valorant":
+                        MessageBox.Show("Soon");
+                        break;
+                    case "LoL: Wild Rift":
+                        MessageBox.Show("Soon");
+                        break;
+                    case "Project L":
+                        MessageBox.Show("Soon");
+                        break;
+                    case "Project F":
+                        MessageBox.Show("Soon");
+                        break;
+                    default:
+                        //MessageBox.Show("Follow me on Twitter @ree_gms");
+                        profile.Show();
+                        this.Close();
+                        break;
+                }
             }
             else
             {

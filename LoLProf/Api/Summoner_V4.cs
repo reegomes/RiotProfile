@@ -16,7 +16,7 @@ namespace LoLProf.Api
         }
         public SummonerDTO GetSummonerByName(string SummonerName)
         {
-            string path = "summoner/v4/summoners/by-name/" + SummonerName;
+            string path = "lol/summoner/v4/summoners/by-name/" + SummonerName;
             var response = GET(GetURI(path));
             string content = response.Content.ReadAsStringAsync().Result;
 

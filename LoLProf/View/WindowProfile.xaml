@@ -5,36 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoLProf.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="340" Width="400" WindowStartupLocation="Manual" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+        mc:Ignorable="d" Height="340" Width="400" WindowStartupLocation="Manual" ResizeMode="NoResize" WindowStyle="None" Background="Magenta" AllowsTransparency="True">
     <Grid>
         <Border Margin="20 100 20 20" CornerRadius="15">
             <Border.Background>
-                <ImageBrush ImageSource="/LoLProf;component/Assets/Background/jhin.png" Stretch="UniformToFill" Opacity="10"/>
+                <ImageBrush ImageSource="/LoLProf;component/Assets/Background/thresh3.png"/>
             </Border.Background>
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
-                    <Border Width="100" Height="100" Margin="20 10 0 10" BorderBrush="Gray" HorizontalAlignment="Left" BorderThickness="1" CornerRadius="15">
-                        <Border.Background>
-                            <ImageBrush ImageSource="{Binding Path=Icon}"/>
-                        </Border.Background>
-                    </Border>
-                    <TextBlock Margin="15,0" FontSize="30" Text="{Binding SummonerName}" Foreground="GhostWhite" />
-                    <StackPanel Orientation="Horizontal" Margin="10 0">
-                        <StackPanel Margin="5">
-                            <TextBlock Text="Wins" FontSize="15" FontWeight="Bold" Foreground="LightSeaGreen"/>
-                            <TextBlock Text="{Binding Path=Wins}" FontSize="18" Foreground="White" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                        <StackPanel Margin="5">
-                            <TextBlock Text="Losses" FontSize="15" FontWeight="Bold" Foreground="OrangeRed"/>
-                            <TextBlock Text="{Binding Path=Losses}" FontSize="18" Foreground="White" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                        <StackPanel Margin="5">
-                            <TextBlock Text="WinRate " FontSize="15" FontWeight="Bold" Foreground="SkyBlue"/>
-                            <TextBlock Text="{Binding Path=WinRate}" Foreground="{Binding Path=ColorWinRate}" FontSize="18" HorizontalAlignment="Center"/>
-                        </StackPanel>
+                <Border Width="100" Height="100" Margin="20 10 0 10" BorderBrush="Gray" HorizontalAlignment="Left" BorderThickness="1" CornerRadius="15">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{Binding Path=Icon}"/>
+                    </Border.Background>
+                </Border>
+                <TextBlock Margin="15,0" FontSize="30" Text="{Binding SummonerName}" Foreground="GhostWhite" />
+                <StackPanel Orientation="Horizontal" Margin="10 0">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Wins" FontSize="15" FontWeight="Bold" Foreground="LightSeaGreen"/>
+                        <TextBlock Text="{Binding Path=Wins}" FontSize="18" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Losses" FontSize="15" FontWeight="Bold" Foreground="OrangeRed"/>
+                        <TextBlock Text="{Binding Path=Losses}" FontSize="18" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="WinRate " FontSize="15" FontWeight="Bold" Foreground="SkyBlue"/>
+                        <TextBlock Text="{Binding Path=WinRate}" Foreground="{Binding Path=ColorWinRate}" FontSize="18" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=CurrentyChampionId}" Foreground="White" FontSize="18"/>
                     </StackPanel>
                 </StackPanel>
-            </Border>
-            <StackPanel HorizontalAlignment="Right" Margin="10 10">
+            </StackPanel>
+        </Border>
+        <StackPanel HorizontalAlignment="Right" Margin="10 10">
             <StackPanel.Effect>
                 <DropShadowEffect BlurRadius="40" ShadowDepth="1"/>
             </StackPanel.Effect>

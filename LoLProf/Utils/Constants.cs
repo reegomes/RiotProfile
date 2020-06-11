@@ -15,5 +15,6 @@ namespace LoLProf.Utils
         // A partir daqui é tudo teste
         public static MatchDTO Match { get; set; }
         public static SpectatorDTO Spec { get; set; }
+        public static long CurrentyChampionId { get; set; }
     }
 }

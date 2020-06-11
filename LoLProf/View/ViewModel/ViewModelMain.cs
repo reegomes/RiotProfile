@@ -31,5 +31,12 @@ namespace LoLProf.View.ViewModel
             get { return summonerName; }
             set { summonerName = value; NotifyPropertyChanged("SummonerName"); }
         }
+
+        string gameMode;
+        public string GameMode
+        {
+            get { return gameMode; }
+            set { gameMode = value; NotifyPropertyChanged("GameMode"); }
+        }
     }
 }
