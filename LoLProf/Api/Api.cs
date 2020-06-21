@@ -39,5 +39,11 @@ namespace LoLProf.Api
             StreamReader sr = new StreamReader(path);
             return sr.ReadToEnd();
         }
+        /* Queues */
+        /* 'blind': 430,
+           'draft': 400,
+           'solo': 420,
+           'flex': 440,
+           'aram': 450 */
     }
 }

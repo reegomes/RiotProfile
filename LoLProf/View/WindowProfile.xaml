@@ -9,7 +9,7 @@
     <Grid>
         <Border Margin="20 100 20 20" CornerRadius="15">
             <Border.Background>
-                <ImageBrush ImageSource="/LoLProf;component/Assets/Background/thresh3.png"/>
+                <ImageBrush ImageSource="/LoLProf;component/Assets/Background/test.png" Stretch="UniformToFill"/>
             </Border.Background>
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
                 <Border Width="100" Height="100" Margin="20 10 0 10" BorderBrush="Gray" HorizontalAlignment="Left" BorderThickness="1" CornerRadius="15">
